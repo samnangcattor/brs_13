@@ -1,24 +1,3 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   headers:
     title: "Book Reviewing System"
@@ -27,3 +6,21 @@ en:
     welcome: "Welcome To Book Reviewing System"
     description: "This is the home page for the"
     name: "Framgia"
+  menus:
+    edit: "Edit User"
+    signup: "Sign Up"
+    login: "Log in"
+    back: "Back"
+  news:
+    cancelaccount: "Cancel Account"
+    myaccount: "Cancel my acoount"
+    sure: "Are you sure?"
+    passwordblank: "(leave blank if you don't want to change it)"
+    currentpassword: "we need your current password to confirm your changes)"
+  button:
+    submit: "Submit"
+    update: "update"
+  link:
+    profile: "Profile"
+    setting: "Setting"
+    signup: "Sign Up"
