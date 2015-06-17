@@ -20,4 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  headers:
+    title: "Book Reviewing System"
+    home: "Home"
+    login: "Log in"
+    welcome: "Welcome To Book Reviewing System"
+    description: "This is the home page for the"
+    name: "Framgia"
