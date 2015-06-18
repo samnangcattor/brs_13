@@ -1,0 +1,5 @@
+<%= form_for current_user.book_states.find_by(book_id: book.id),
+  remote: true do |f| %>
+  <div><%= f.hidden_field :state, value: Settings.read %></div>
+  <%= f.submit t("buttons.reading"), class: "btn" %>
+<% end %>

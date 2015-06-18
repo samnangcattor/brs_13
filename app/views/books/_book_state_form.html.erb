@@ -1,0 +1,9 @@
+<div id="state">
+    <% if current_user.reading? book %>  
+      <%= render "books/read", book: book %>
+    <% elsif current_user.read? book %>
+      <button class="btn"><%= t "buttons.read" %></button>
+    <% else %>
+      <%= render "books/reading", book: book %>
+    <% end %>
+</div>

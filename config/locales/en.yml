@@ -33,6 +33,9 @@ en:
     follow: "Follow"
     unfollow: "Unfollow"
     review: "Review"
+    start_read: "Start Read"
+    read: "read"
+    reading: "reading"
   link:
     profile: "Profile"
     setting: "Setting"

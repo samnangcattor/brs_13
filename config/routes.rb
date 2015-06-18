@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:index, :create, :destroy]
   resources :reviews
+  resources :book_states, only: [:create, :update]
 end
