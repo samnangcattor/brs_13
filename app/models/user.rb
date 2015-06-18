@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  enum role: [:member, :admin]
+
   has_many :request_books, dependent: :destroy
   has_many :activities, dependent: :destroy
   has_many :likes, dependent: :destroy
