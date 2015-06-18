@@ -4,6 +4,7 @@
     <%= t "headers.description" %>
     <a href="http://www.framgia.com/"><%= t "headers.name" %></a>
   </h2>
+  <%= link_to t("links.sign_up"), new_user_registration_path, class: "btn btn-lg btn-primary" %>
 </div>
 <%= link_to image_tag("framgia.jpg", alt: "framgia"),
   "http://www.framgia.com" %>
