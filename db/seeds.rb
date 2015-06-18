@@ -8,8 +8,9 @@
 50.times do
   name = Faker::Name.name
   email = Faker::Internet.email
-  User.create! name:  name,
-            email: email,
-            password:  "123456",
-            password_confirmation: "123456"
+  User.create! name: name,
+    email: email,
+    role: 0,
+    password: "123456",
+    password_confirmation: "123456"
 end

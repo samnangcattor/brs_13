@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   resources :users
   devise_for :admins,
     class_name: "User",
-    controller: {sessions: "admins/sessions"},
+    controllers: {sessions: "admins/sessions"},
     only: :sessions
   namespace :admins do
     root "users#index"
+    devise_for :users
     resources :users
   end
 end

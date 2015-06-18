@@ -16,6 +16,7 @@ en:
     acoount: "Account"
     user: "User"
     sign_out: "Sign out"
+    create: "Create new user"
   news:
     cancelaccount: "Cancel Account"
     myaccount: "Cancel my acoount"
@@ -29,7 +30,11 @@ en:
     profile: "Profile"
     setting: "Setting"
     signup: "Sign Up"
+    edit: "Edit"
+    delete: "Delete"
   flashs:
     login: "Please log in."
+    confirm: "Are you sure ?"
+    delete: "User have been delete"
   titles:
-    user: "All users"
+    user: "Users"
