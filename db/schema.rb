@@ -62,11 +62,11 @@ ActiveRecord::Schema.define(version: 20150621115238) do
   add_index "book_states", ["user_id"], name: "index_book_states_on_user_id", using: :btree
 
   create_table "books", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.string   "date",       limit: 255
-    t.integer  "page",       limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "title",        limit: 255
+    t.date     "publish_date"
+    t.integer  "page",         limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "categories", force: :cascade do |t|

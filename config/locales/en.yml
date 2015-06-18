@@ -17,6 +17,7 @@ en:
     user: "User"
     sign_out: "Sign out"
     create: "Create new user"
+    show_list_book: "Show all books"
   news:
     cancelaccount: "Cancel Account"
     myaccount: "Cancel my acoount"
@@ -43,3 +44,8 @@ en:
     user: "Users"
     followers: "Followers"
     following: "Following"
+    book: "Books"
+  descriptions:
+    public: "public at:"
+    category: "category:"
+    by: "by:"

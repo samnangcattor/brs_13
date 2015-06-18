@@ -1,0 +1,6 @@
+<% provide :title, t("titles.book") %>
+<h1><%= t "title.book" %></h1>
+<ul class = "books">
+  <%= render @books %>
+</ul>
+<%= will_paginate %>

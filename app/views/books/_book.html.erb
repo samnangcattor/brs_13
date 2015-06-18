@@ -1,0 +1,8 @@
+<li>
+  <%= link_to book.title, book %>
+  <br/><%= t "descriptions.public" %><%= book.publish_date %>
+  <br/><%= t "descriptions.category" %>
+    <%= render partial: "categories/category", collection: book.categories %>
+  <br/><%= t "descriptions.by" %>
+    <%= render partial: "authors/author", collection: book.authors %>
+</li>
