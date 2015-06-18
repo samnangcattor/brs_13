@@ -6,11 +6,16 @@ en:
     welcome: "Welcome To Book Reviewing System"
     description: "This is the home page for the"
     name: "Framgia"
+    signin: "Sign in"
   menus:
     edit: "Edit User"
     signup: "Sign Up"
     login: "Log in"
     back: "Back"
+    show_list_user: "Show all users"
+    acoount: "Account"
+    user: "User"
+    sign_out: "Sign out"
   news:
     cancelaccount: "Cancel Account"
     myaccount: "Cancel my acoount"
@@ -24,3 +29,7 @@ en:
     profile: "Profile"
     setting: "Setting"
     signup: "Sign Up"
+  flashs:
+    login: "Please log in."
+  titles:
+    user: "All users"
