@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   get "users/:id/:status", to: "relationships#index", as: :users_with_status
   resources :books, only: [:index, :show]
+  resources :authors, only: [:show]
+  resources :categories, only: [:show]
   devise_for :admins,
     class_name: "User",
     controllers: {sessions: "admins/sessions", only: [:create]},
