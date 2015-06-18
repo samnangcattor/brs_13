@@ -6,3 +6,4 @@ class ActivitiesController < ApplicationController
     @activities = @user.activities.paginate page: params[:page]
   end
 end
+

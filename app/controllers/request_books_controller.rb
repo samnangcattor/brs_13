@@ -48,3 +48,4 @@ class RequestBooksController < ApplicationController
     @request_book = RequestBook.find params[:id]
   end
 end
+
