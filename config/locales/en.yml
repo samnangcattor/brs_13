@@ -45,7 +45,8 @@ en:
     favorite: "Favorite"
     unfavorite: "Unfavorite"
     comment: "Comment"
-  link:
+    request: "Request"
+  links:
     profile: "Profile"
     setting: "Setting"
     signup: "Sign Up"
@@ -53,6 +54,8 @@ en:
     delete: "Delete"
     cancel: "Cancel"
     view_profile: "View my profile"
+    request_book: "Request book"
+    list_request: "List Request Book"
   flashs:
     login: "Please log in."
     confirm: "Are you sure ?"
@@ -74,6 +77,9 @@ en:
     notblank: "Can't blank"
     rev_delete: "Review have been delete"
     comment_delete: "Comment have been delete"
+    request: "Request have been created"
+    delete_request: "Request book have been delete"
+    failed_update: "Update is failed"
   titles:
     user: "Users"
     followers: "Followers"
@@ -97,7 +103,10 @@ en:
     addauthor: "Add Author"
     editauthor: "Edit Author"
     review: "Reviews"
+    request_book: "Request book"
   descriptions:
     public: "public at:"
     category: "category:"
     by: "by:"
+    title: "Title:"
+    description: "Description:"
