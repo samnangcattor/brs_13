@@ -49,6 +49,7 @@ en:
     request: "Request"
   links:
     comment: "Comment"
+    request: "Request"
     profile: "Profile"
     setting: "Setting"
     signup: "Sign Up"
@@ -83,6 +84,7 @@ en:
     delete_request: "Request book have been delete"
     failed_update: "Update is failed"
     comment_delete: "Comment have been delete"
+    request: "Request have been created"
   titles:
     user: "Users"
     followers: "Followers"
@@ -109,6 +111,7 @@ en:
     review: "Reviews"
     request_book: "Request book"
     search: "Search"
+    request_book: "Request book"
   descriptions:
     public: "public at:"
     category: "category:"

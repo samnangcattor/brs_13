@@ -2,3 +2,6 @@ reading: reading
 read: read
 follow: follow
 unfollow: unfollow
+favorite: favorite
+review: review
+comment: comment
