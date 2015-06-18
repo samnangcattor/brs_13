@@ -43,8 +43,8 @@ books.each {|book| BookCategory.create! book: book, category: category}
 
 users.each {|user|
   name = Faker::Name.name
-  decription = Faker::Commerce.department
-  RequestBook.create! user: user, name: name, decription: decription
+  description = Faker::Commerce.department
+  RequestBook.create! user: user, name: name, description: description
 }
 
 books.each {|book| 

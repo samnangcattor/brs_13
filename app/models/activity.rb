@@ -3,5 +3,5 @@ class Activity < ActiveRecord::Base
   has_many :likes, dependent: :destroy
 
   validates :target_id, presence: true
-  validates :state, presence: true, length: {maximum: 50}
+  validates :state_target, presence: true, length: {maximum: 50}
 end
