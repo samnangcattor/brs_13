@@ -23,18 +23,23 @@ en:
     sure: "Are you sure?"
     passwordblank: "(leave blank if you don't want to change it)"
     currentpassword: "we need your current password to confirm your changes)"
-  button:
+  buttons:
     submit: "Submit"
     update: "update"
+    follow: "Follow"
+    unfollow: "Unfollow"
   link:
     profile: "Profile"
     setting: "Setting"
     signup: "Sign Up"
     edit: "Edit"
     delete: "Delete"
+    view_profile: "View my profile"
   flashs:
     login: "Please log in."
     confirm: "Are you sure ?"
     delete: "User have been delete"
   titles:
     user: "Users"
+    followers: "Followers"
+    following: "Following"
