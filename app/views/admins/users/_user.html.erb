@@ -1,4 +1,6 @@
 <li>
   <%= gravatar_for user, size: 50 %>
   <%= link_to user.name, [:admins ,user] %>
+  <%= link_to t("links.delete"), [:admins, user], method: :delete,
+   data: {confirm: t("flashs.confirm")} %>
 </li>
