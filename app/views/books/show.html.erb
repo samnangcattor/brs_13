@@ -1,0 +1,13 @@
+<% provide :title, @book.title %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="book_info">
+      <h1>
+        <%= @book.title %>
+      </h1>
+      <br/><%= t "descriptions.public" %><%= @book.publish_date %>
+      <br/><%= t "descriptions.category" %><%= render @categories %>
+      <br/><%= t "descriptions.by" %><%= render @authors %>
+    </section>
+  </aside>
+</div>
