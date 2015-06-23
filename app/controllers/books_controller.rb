@@ -10,5 +10,6 @@ class BooksController < ApplicationController
     @categories = @book.categories
     @authors = @book.authors
     @review = @book.reviews.build
+    @reviews = @book.reviews.paginate page: params[:page]
   end
 end
