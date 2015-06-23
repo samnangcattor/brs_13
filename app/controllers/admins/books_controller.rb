@@ -14,9 +14,10 @@ before_action :set_book, except: [:index, :new, :create]
 
   def create
     @book = Book.new book_params
+    @books = Book.paginate page: params[:page]
     if @book.save
-      flash[:success] = t "flash.create_succes"
-      redirect_to "#"
+      flash[:notice] = t "flashs.addbook"
+      render "index"
     else
       render "new"
     end
@@ -29,7 +30,7 @@ before_action :set_book, except: [:index, :new, :create]
 
   def update
     if @book.update_attributes book_params
-      flash[:info] = t "titles.author"
+      flash[:notice] = t "titles.author"
       redirect_to [:admins, @book]
     else
       render "edit"
@@ -39,6 +40,7 @@ before_action :set_book, except: [:index, :new, :create]
   def show
     @categories = @book.categories
     @authors = @book.authors
+    @reviews = @book.reviews.paginate page: params[:page]
   end
 
   def destroy

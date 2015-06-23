@@ -13,11 +13,11 @@ class Admins::CategoriesController < ApplicationController
   def create
     @category = Category.new category_params
     if @category.save
-      flash[:success] = t "flash.create_succes"
-      redirect_to request.referer || root_url
+      flash[:notice] = t "flashs.addcategory"
     else
-      render "new"
+      flash[:alert] = t "flashs.categoryblank"
     end
+    redirect_to request.referer || root_url
   end
 
   def edit
@@ -26,8 +26,8 @@ class Admins::CategoriesController < ApplicationController
 
   def update
     if @category.update_attributes category_params
-      flash[:info] = t "titles.category"
-      render "new"
+      flash[:notice] = t "flashs.updatecategory"
+      redirect_to request.referer || root_url
     else
       render "edit"
     end
@@ -35,7 +35,7 @@ class Admins::CategoriesController < ApplicationController
 
   def destroy
     @category.destroy
-    flash[:success] = t "flashs.delete"
+    flash[:alert] = t "flashs.deletecategory"
     redirect_to request.referer || root_url
   end
 

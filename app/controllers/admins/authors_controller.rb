@@ -13,11 +13,11 @@ class Admins::AuthorsController < ApplicationController
   def create
     @author = Author.new author_params
     if @author.save
-      flash[:success] = t "flash.create_succes"
-      redirect_to request.referer || root_url
+      flash[:notice] = t "flashs.addauthor"
     else
-      render "new"
+      flash[:alert] = t "flashs.blankauthor"
     end
+    redirect_to request.referer || root_url
   end
 
   def edit
@@ -26,7 +26,7 @@ class Admins::AuthorsController < ApplicationController
 
   def update
     if @author.update_attributes author_params
-      flash[:info] = t "titles.author"
+      flash[:notice] = t "flashs.deleteauthor"
       redirect_to request.referer || root_url
     else
       render "edit"
@@ -35,7 +35,7 @@ class Admins::AuthorsController < ApplicationController
 
   def destroy
     @author.destroy
-    flash[:success] = t "flashs.delete"
+    flash[:alert] = t "flashs.deleteauthor"
     redirect_to request.referer || root_url
   end
 

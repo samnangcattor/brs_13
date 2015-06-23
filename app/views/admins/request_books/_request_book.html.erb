@@ -1,0 +1,7 @@
+<tr>
+  <td><%= request_book.name %></td>
+  <td><%= request_book.decription %></td>
+  <td class="text-center">
+    <%= link_to t("link.cancel"), [:admins, request_book], method: :delete, data: {confirm: t("flashs.confirm")} %>
+  </td>
+</tr>
