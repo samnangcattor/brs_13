@@ -7,6 +7,9 @@ class Book < ActiveRecord::Base
   has_many :book_categories, dependent: :destroy
   has_many :categories, through: :book_categories
 
+  accepts_nested_attributes_for :author_books, allow_destroy: true
+  accepts_nested_attributes_for :book_categories, allow_destroy: true
+
   validates :title, presence: true, length: {maximum: 100}
   validates :publish_date, presence: true
   validates :page, presence: true, numericality: {only_integer: true, greater_than: 0}
