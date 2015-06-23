@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
   def create
     @review = current_user.reviews.build review_params
     if @review.save
+      ReviewsWorker.perform_async params[:review][:book_id]
       flash[:notice] = t "flashs.success"
     else
       flash[:alert] = t "flashs.notblank"

@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build comment_params
     if @comment.save
+      CommentsWorker.perform_async @comment.id
       flash[:notice] = t "flashs.success"
     else
       flash[:alert] = t "flashs.notblank"
