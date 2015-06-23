@@ -1,0 +1,13 @@
+<li class="comment">
+  <%= gravatar_for comment.user, size: 10 %>
+  <span class="user"><%= comment.user.name %></span></br>
+  <span class="content"><%= comment.comment %></span></br>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(comment.created_at) %> ago.
+    <% if comment.user == current_user %>
+      <%= link_to t("link.edit"), edit_comment_path(comment) %>
+      <%= link_to t("link.delete"), comment, method: :delete,
+                                       data: { confirm: t("news.sure") } %>
+    <% end %>
+  </span>
+</li>

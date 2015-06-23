@@ -22,6 +22,7 @@ en:
     show_request_book: "Show request books"
     author: "Authors"
     category: "Categories"
+    comment: "Comments"
   news:
     cancelaccount: "Cancel Account"
     myaccount: "Cancel my acoount"
@@ -40,6 +41,7 @@ en:
     reading: "reading"
     favorite: "Favorite"
     unfavorite: "Unfavorite"
+    comment: "Comment"
   link:
     profile: "Profile"
     setting: "Setting"
@@ -62,6 +64,9 @@ en:
     deleteauthor: "Author deleted"
     updateauthor: "Author updated"
     blankauthor: "Author's name can not blank"
+    success: "Success"
+    notblank: "Can't blank"
+    rev_delete: "Review have been delete"
     success: "Success"
     notblank: "Can't blank"
     rev_delete: "Review have been delete"
