@@ -1,0 +1,15 @@
+<% provide :title, @category.name %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="category_info">
+      <%= @category.name %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <h1><%= t "title.book" %></h1>
+    <ul class = "books">
+      <%= render @books %>
+    </ul>
+    <%= will_paginate @books %>
+  </div>
+</div>
