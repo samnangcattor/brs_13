@@ -24,6 +24,8 @@ en:
     category: "Categories"
     comment: "Comments"
     list_favorite: "List Book Favorite"
+    edit_rev: "Edit review"
+    edit_comment: "Edit comment"
   news:
     cancelaccount: "Cancel Account"
     myaccount: "Cancel my acoount"
@@ -71,6 +73,7 @@ en:
     success: "Success"
     notblank: "Can't blank"
     rev_delete: "Review have been delete"
+    comment_delete: "Comment have been delete"
   titles:
     user: "Users"
     followers: "Followers"

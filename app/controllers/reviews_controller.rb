@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy]
+  before_action :set_review, except: [:new, :create]
 
   def show
-    @review = Review.find params[:id]
     @comments = @review.comments.paginate page: params[:page]
     @comment = @review.comments.build
   end
@@ -18,11 +18,9 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @review = Review.find params[:id]
   end
 
   def update
-    @review = Review.find params[:id]
     if @review.update_attributes review_params
       flash[:notice] = t "flashs.success"
       redirect_to @review.book
@@ -33,13 +31,16 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = Review.find params[:id]
     @review.destroy
     flash[:notice] = t "flashs.rev_delete"
     redirect_to request.referer || root_url
   end
 
   private
+  def set_review
+    @review = Review.find params[:id]
+  end
+
   def review_params
     params.require(:review).permit :book_id, :user_id, :review, :rate
   end
