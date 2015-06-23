@@ -10,8 +10,9 @@ Rails.application.routes.draw do
     only: :sessions
   namespace :admins do
     root "users#index"
-    devise_for :users, only: [:create, :show, :destroy]
+    devise_for :users
     resources :users
+    resources :books
   end
   resources :relationships, only: [:index, :create, :destroy]
 end

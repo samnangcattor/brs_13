@@ -26,7 +26,8 @@ en:
     currentpassword: "we need your current password to confirm your changes)"
   buttons:
     submit: "Submit"
-    update: "update"
+    update: "Update"
+    add: "Add"
     follow: "Follow"
     unfollow: "Unfollow"
   link:
