@@ -1,0 +1,5 @@
+<%= bootstrap_form_for [:admins, @author] do |f| %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.submit @author.new_record? ? t("buttons.add") : t("buttons.update"), class: "btn btn-primary" %>
+<% end %>

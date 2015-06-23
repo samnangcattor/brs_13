@@ -24,7 +24,7 @@ followers.each {|follower| follower.follow user}
     page: page
 end
 
-10.times do
+70.times do
   name = Faker::Name.name
   Author.create! name: name
 end
