@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   resources :relationships, only: [:index, :create, :destroy]
   resources :reviews
   resources :book_states, only: [:create, :update]
+  resources :book_favorites, only: [:create, :destroy]
 end

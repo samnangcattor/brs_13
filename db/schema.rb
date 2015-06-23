@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150621115238) do
+ActiveRecord::Schema.define(version: 20150624031011) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id",      limit: 4
@@ -49,11 +49,21 @@ ActiveRecord::Schema.define(version: 20150621115238) do
   add_index "book_categories", ["book_id"], name: "index_book_categories_on_book_id", using: :btree
   add_index "book_categories", ["category_id"], name: "index_book_categories_on_category_id", using: :btree
 
+  create_table "book_favorites", force: :cascade do |t|
+    t.boolean  "favorite",   limit: 1
+    t.integer  "user_id",    limit: 4
+    t.integer  "book_id",    limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "book_favorites", ["book_id"], name: "index_book_favorites_on_book_id", using: :btree
+  add_index "book_favorites", ["user_id"], name: "index_book_favorites_on_user_id", using: :btree
+
   create_table "book_states", force: :cascade do |t|
     t.integer  "book_id",    limit: 4
     t.integer  "user_id",    limit: 4
     t.string   "state",      limit: 255, default: "unread"
-    t.boolean  "favorite",   limit: 1,   default: false
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
   end
@@ -152,6 +162,8 @@ ActiveRecord::Schema.define(version: 20150621115238) do
   add_foreign_key "author_books", "books"
   add_foreign_key "book_categories", "books"
   add_foreign_key "book_categories", "categories"
+  add_foreign_key "book_favorites", "books"
+  add_foreign_key "book_favorites", "users"
   add_foreign_key "book_states", "books"
   add_foreign_key "book_states", "users"
   add_foreign_key "comments", "reviews"

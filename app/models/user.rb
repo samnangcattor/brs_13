@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :book_states, dependent: :destroy
+  has_many :book_favorites, dependent: :destroy
   has_many :books, through: :book_states
   has_many :active_relationships, class_name: "Relationship",
     foreign_key: "follower_id", dependent: :destroy
@@ -42,5 +43,17 @@ class User < ActiveRecord::Base
 
   def read? book
     book_states.exists? book_id: book.id, state: Settings.read
+  end
+  
+  def favourite book
+    book_favorites.create! book_id: book.id, favorite: true
+  end
+
+  def unfavourite book
+    book_favorites.find_by(id: book.id).destroy
+  end
+
+  def favourite? book
+    book_favorites.exists? book_id: book.id, favorite: true
   end
 end

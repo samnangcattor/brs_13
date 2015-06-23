@@ -38,6 +38,8 @@ en:
     start_read: "Start Read"
     read: "read"
     reading: "reading"
+    favorite: "Favorite"
+    unfavorite: "Unfavorite"
   link:
     profile: "Profile"
     setting: "Setting"
