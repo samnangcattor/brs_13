@@ -9,5 +9,6 @@ class BooksController < ApplicationController
     @book = Book.find params[:id]
     @categories = @book.categories
     @authors = @book.authors
+    @review = @book.reviews.build
   end
 end

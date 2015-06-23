@@ -9,5 +9,8 @@
       <br/><%= t "descriptions.category" %><%= render @categories %>
       <br/><%= t "descriptions.by" %><%= render @authors %>
     </section>
+    <section class="review_form">
+      <%= render "reviews/review_form", book: @book %>
+    </section>
   </aside>
 </div>

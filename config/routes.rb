@@ -14,4 +14,5 @@ Rails.application.routes.draw do
     resources :users
   end
   resources :relationships, only: [:index, :create, :destroy]
+  resources :reviews
 end
