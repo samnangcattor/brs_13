@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration
       t.references :book, index: true
       t.references :user, index: true
       t.string :review
-      t.integer :rate
+      t.integer :rate, default: 0
 
       t.timestamps null: false
     end

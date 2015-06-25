@@ -122,9 +122,9 @@ ActiveRecord::Schema.define(version: 20150621115238) do
     t.integer  "book_id",    limit: 4
     t.integer  "user_id",    limit: 4
     t.string   "review",     limit: 255
-    t.integer  "rate",       limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "rate",       limit: 4,   default: 0
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   add_index "reviews", ["book_id"], name: "index_reviews_on_book_id", using: :btree

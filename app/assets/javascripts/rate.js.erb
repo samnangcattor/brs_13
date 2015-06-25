@@ -1,0 +1,18 @@
+var ready = function() {
+  $('#rate').raty({
+    size     : 24,
+    starHalf : '<%= asset_path('star-half.png') %>',
+    starOff  : '<%= asset_path('star-off.png') %>',
+    starOn   : '<%= asset_path('star-on.png') %>',
+    cancel : true,
+    cancelOff  : '<%= asset_path('cancel-off.png') %>',
+    cancelOn  : '<%= asset_path('cancel-on.png') %>',
+    targetType: 'number',
+    targetKeep: true,
+    click: function(score, evt) {
+      $("#review_rate").val(score);
+    }
+  });
+}
+
+$(document).on("ready page:load", ready);

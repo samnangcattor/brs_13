@@ -30,6 +30,7 @@ en:
     add: "Add"
     follow: "Follow"
     unfollow: "Unfollow"
+    review: "Review"
   link:
     profile: "Profile"
     setting: "Setting"
@@ -41,6 +42,8 @@ en:
     login: "Please log in."
     confirm: "Are you sure ?"
     delete: "User have been delete"
+    success: "Success"
+    notblank: "Can't blank"
   titles:
     user: "Users"
     followers: "Followers"
