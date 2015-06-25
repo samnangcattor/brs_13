@@ -1,0 +1,7 @@
+<tr>
+  <td><%= category.name %></td>
+  <td class="text-center">
+    <%= link_to t("link.edit"), edit_admins_category_path(category), "data-toggle" => "modal", remote: true, "data-target" => "#form-modal" %>
+    <%= link_to t("link.delete"), [:admins, category], method: :delete, data: {confirm: t("flashs.confirm")} %>
+  </td>
+</tr>

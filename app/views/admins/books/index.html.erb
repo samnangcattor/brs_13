@@ -1,0 +1,15 @@
+<% provide :title, t("titles.book") %>
+<div class="jumbotron">
+  <h1><%= t "titles.book" %></h1>
+  <table class="table table-striped">
+    <tr>
+      <td><%= t "titles.booktitle" %></td>
+      <td><%= t "titles.publishdate" %></td>
+      <td><%= t "titles.category" %></td>
+      <td><%= t "titles.author" %></td>
+      <td><%= t "titles.editdelete" %></td>
+    </tr>
+    <%= render @books %>
+  </table>
+  <%= will_paginate %>
+</div>

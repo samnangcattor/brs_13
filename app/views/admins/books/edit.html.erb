@@ -1,0 +1,21 @@
+<% provide :title, t("titles.editbook") %>
+<h1><%= t "titles.editbook" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= bootstrap_form_for [:admins, @book] do |f| %>
+      <div class="row">
+        <%= f.text_field :title, class: "form-control" %>
+
+        <%= f.date_select :publish_date,class: "form-control" %>
+
+        <%= f.number_field :page, class: "form-control" %>
+
+        <%= f.collection_check_boxes :author_ids, @authors, :id, :name, include_blank: true %>
+
+        <%= f.collection_check_boxes :category_ids, @categories, :id, :name, include_blank: true %>
+
+        <%= f.submit @book.new_record? ? t("buttons.add") : t("buttons.update"), class: "btn btn-primary" %>
+      </div>
+    <% end %> 
+  </div> 
+</div>

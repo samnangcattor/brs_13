@@ -1,0 +1,11 @@
+<div class="jumbotron">
+  <h1><%= t "menus.category" %></h1>
+  <p><%= link_to t("buttons.add_new"), new_admins_category_path, "data-toggle" => "modal", remote: true, "data-target" => "#form-modal", class: "btn btn-primary" %>
+  </p>
+  <div class="row vertical-center">
+    <div class="col-md-8 col-md-offset-2">
+      <%= render "show" %>
+    </div>
+  </div> 
+</div>
+<div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>

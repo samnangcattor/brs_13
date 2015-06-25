@@ -1,0 +1,7 @@
+<tr>
+  <td><%= author.name %></td>
+  <td class="text-center">
+    <%= link_to t("link.edit"), edit_admins_author_path(author), "data-toggle" => "modal", remote: true, "data-target" => "#form-modal" %>
+    <%= link_to t("link.delete"), [:admins, author], method: :delete, data: {confirm: t("flashs.confirm")} %>
+  </td>
+</tr>

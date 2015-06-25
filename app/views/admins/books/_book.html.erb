@@ -1,0 +1,14 @@
+<tr>
+  <td><%= link_to book.title, [:admins, book] %></td>
+  <td><%= book.publish_date %></td>
+  <td>
+    <%= render partial: "category", collection: book.categories %>
+  </td>
+  <td>
+    <%= render partial: "author", collection: book.authors %>
+  </td>
+  <td>
+    <%= link_to t("link.edit"), edit_admins_book_path(book) %>
+    <%= link_to t("link.delete"), [:admins, book], method: :delete, data: {confirm: t("flashs.confirm")} %>
+  </td>
+</tr>
