@@ -1,0 +1,12 @@
+<div class="right">
+  <% content_for :search do %>
+    <%= search_form_for @search do |f| %>
+      <div class="col-md-9">
+        <%= f.text_field :name_cont, class: "form-control", placeholder: t("titles.categoryname") %>
+      </div>
+      <div class="col-md-3">
+        <%= f.submit t("titles.search"), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
