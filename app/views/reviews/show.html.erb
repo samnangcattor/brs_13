@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="review">
+      <h1><%= t "titles.review" %></h1>
+      <%= gravatar_for @review.user %>
+        <span><%= @review.user.name %></span></br>
+        <span><%= @review.review %></span></br>
+        <span class="timestamp">
+        Posted <%= time_ago_in_words(@review.created_at) %> ago.</span></br>
+    </div>
+  </div>
+</div>
+<div class="comments">
+  <h3><%= t "menus.comment" %></h3>
+  <div class="col-offset-3">
+      <%= render @comments %>
+      <%= will_paginate @comments %>
+      <div><%= render "comments/comment_form", review: @review %></div>
+  </div>
+</div>

@@ -1,16 +1,17 @@
-<li class="review-list">
-  <%= gravatar_for review.user %>
-  <span class="user"><%= review.user.name %></span></br>
-  <div class="rate_show" data-score=<%= review.rate %>></div>
-  <div>
+<li>
+  <div class="col-md-2"><%= gravatar_for review.user %></div>
+  <div class="col-md-8">
+    <span class="user"><%= review.user.name %></span></br>
     <span class="content"><%= review.review %></span></br>
     <span class="timestamp">
       Posted <%= time_ago_in_words(review.created_at) %> ago.
       <% if review.user == current_user %>
-        <%= link_to t("link.edit"), edit_review_path(review) %>
+        <%= link_to t("link.edit"), edit_review_path(review), "data-toggle" => "modal", remote: true, "data-target" => "#form-modal" %>
         <%= link_to t("link.delete"), review, method: :delete,
-          data: { confirm: t("news.sure") } %>
+                                         data: { confirm: t("news.sure") } %>
       <% end %>
-    </span>
+    </span></br>
+    <p><%= link_to t("menus.comment"), review_path(review) %></p>
   </div>
-<li>
+</li>
+<div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>

@@ -1,6 +1,12 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy]
 
+  def show
+    @review = Review.find params[:id]
+    @comments = @review.comments.paginate page: params[:page]
+    @comment = @review.comments.build
+  end
+  
   def create
     @review = current_user.reviews.build review_params
     if @review.save
