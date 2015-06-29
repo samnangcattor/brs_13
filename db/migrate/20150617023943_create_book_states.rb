@@ -4,7 +4,6 @@ class CreateBookStates < ActiveRecord::Migration
       t.references :book, index: true
       t.references :user, index: true
       t.string :state, default: "unread"
-      t.boolean :favorite, default: false
 
       t.timestamps null: false
     end

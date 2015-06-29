@@ -8,12 +8,13 @@
       <br/><%= t "descriptions.public" %><%= @book.publish_date %>
       <br/><%= t "descriptions.category" %><%= render @categories %>
       <br/><%= t "descriptions.by" %><%= render @authors %>
+      <%= render "book_favourite_form", book: @book %>
     </section>
     <section class="review_form">
       <%= render "reviews/review_form", book: @book %>
     </section>
   </aside>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <%= render "book_state_form", book: @book %>
   <div class="col-md-8">
     <h3><%= t "titles.review" %></h3>

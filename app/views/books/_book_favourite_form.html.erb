@@ -1,0 +1,7 @@
+<div id="state_favourite">
+    <% if current_user.favourite? book %>  
+      <%= render "books/unfavourite", book: book %>
+    <% else %>
+      <%= render "books/favourite", book: book %>
+    <% end %>
+</div>
