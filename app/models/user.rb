@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
   def read? book
     book_states.exists? book_id: book.id, state: Settings.read
   end
-  
+
   def favourite book
     book_favorites.create! book_id: book.id, favorite: true
   end

@@ -23,6 +23,7 @@ en:
     author: "Authors"
     category: "Categories"
     comment: "Comments"
+    list_favorite: "List Book Favorite"
   news:
     cancelaccount: "Cancel Account"
     myaccount: "Cancel my acoount"

@@ -15,3 +15,7 @@
     <%= render "follow_form" if user_signed_in? %>
   </div>
 </div>
+<p><%= link_to t("menus.list_favorite"), book_favorites_path(user_id: @user.id), "data-toggle" => "modal",
+remote: true, "data-target" => "#form-modal" %>
+</p>
+<div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
