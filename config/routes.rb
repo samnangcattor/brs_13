@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     resources :books
     resources :authors
     resources :categories
+    resources :reviews, only: [:show]
+    resources :request_books, only: [:index, :destroy]
   end
   resources :relationships, only: [:index, :create, :destroy]
   resources :reviews

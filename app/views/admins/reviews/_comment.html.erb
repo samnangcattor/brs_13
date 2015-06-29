@@ -1,0 +1,10 @@
+<ul class="container-fluid">
+  <div class="col-md-2"><%= gravatar_for comment.user %></div>
+  <div class="col-md-8">
+    <span class="user"><%= link_to comment.user.name, [:admins, comment.user] %></span></br>
+    <span class="content"><%= comment.comment %></span></br>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(comment.created_at) %> ago.
+    </span></br>
+  </div>
+</ul>

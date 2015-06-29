@@ -206,3 +206,15 @@ aside {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+.box_comment {
+  margin-left: 80px;
+}
+section h2 {
+  font-size: 2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}

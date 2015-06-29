@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="book_info">
+        <h2><%= @book.title %></h2>
+        <br/><%= t "descriptions.public" %><%= @book.publish_date %>
+        <br/><%= t "descriptions.category" %><%= render @book.categories %>
+        <br/><%= t "descriptions.by" %><%= render @book.authors %>
+      </section>
+    </aside>
+    <aside class="col-md-8">
+      <%= render "review", review: @review %>
+      <div class="box_comment">
+        <%= render partial: "comment", collection: @comments, as: :comment %>
+        <%= will_paginate @comments %>
+      </div>
+    </aside>
+  </div>
+</div>

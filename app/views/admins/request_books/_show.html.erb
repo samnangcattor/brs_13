@@ -1,0 +1,9 @@
+<table class="table table-striped">
+  <tr>
+    <td class="text-center"><%= t "titles.booktitle" %></td>
+    <td class="text-center"><%= t "titles.description" %></td>
+    <td class="text-center"><%= t "titles.cancel" %></td>
+  </tr>
+  <%= render @request_books %>
+</table>
+<%= will_paginate @request_books %>
