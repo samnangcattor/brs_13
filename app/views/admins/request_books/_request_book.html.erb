@@ -1,7 +1,9 @@
 <tr>
   <td><%= request_book.name %></td>
-  <td><%= request_book.decription %></td>
+  <td><%= request_book.description %></td>
   <td class="text-center">
-    <%= link_to t("link.cancel"), [:admins, request_book], method: :delete, data: {confirm: t("flashs.confirm")} %>
+    <div id="accept_form-<%= request_book.id %>">
+      <%= render "request", request_book: request_book %>
+    </div>
   </td>
 </tr>

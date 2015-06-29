@@ -4,6 +4,7 @@ class CreateRequestBooks < ActiveRecord::Migration
       t.references :user, index: true
       t.string :name
       t.string :description
+      t.boolean :state, default: false
 
       t.timestamps null: false
     end

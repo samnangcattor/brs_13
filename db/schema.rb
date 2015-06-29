@@ -122,8 +122,9 @@ ActiveRecord::Schema.define(version: 20150624031011) do
     t.integer  "user_id",     limit: 4
     t.string   "name",        limit: 255
     t.string   "description", limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.boolean  "state",       limit: 1,   default: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
   end
 
   add_index "request_books", ["user_id"], name: "index_request_books_on_user_id", using: :btree
