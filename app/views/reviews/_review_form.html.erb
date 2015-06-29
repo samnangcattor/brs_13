@@ -1,12 +1,11 @@
-<%= javascript_include_tag "jquery.raty" %>
 <%= form_for @review do |f| %>
-<%= render "shared/error_messages", object: f.object %>
-<div id="rate"></div>
-<div><%= f.hidden_field :book_id, value: book.id %></div>
-<div class="field">
-  <%= f.text_area :review, placeholder: "Compose new review", 
-    class: "form-control" %>
-  <%= f.hidden_field :rate %>
-</div>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="rate"></div>
+  <div><%= f.hidden_field :book_id, value: book.id %></div>
+  <div class="field">
+    <%= f.text_area :review, placeholder: "Compose new review", 
+      class: "form-control" %>
+    <%= f.hidden_field :rate %>
+  </div>
   <%= f.submit t("buttons.review"), class: "btn btn-primary" %>
 <% end %>

@@ -15,5 +15,11 @@
   </aside>
   <div class="col-md-6">
     <%= render "book_state_form", book: @book %>
+  <div class="col-md-8">
+    <h3><%= t "titles.review" %></h3>
+    <ul class = "reviews">
+      <%= render @reviews %>
+    </ul>
+  <%= will_paginate @reviews %>
   </div>
 </div>

@@ -1,18 +1,28 @@
 var ready = function() {
-  $('#rate').raty({
+  $(".rate").raty({
     size     : 24,
-    starHalf : '<%= asset_path('star-half.png') %>',
-    starOff  : '<%= asset_path('star-off.png') %>',
-    starOn   : '<%= asset_path('star-on.png') %>',
+    starOff  : "<%= asset_path('star-off.png') %>",
+    starOn   : "<%= asset_path('star-on.png') %>",
     cancel : true,
-    cancelOff  : '<%= asset_path('cancel-off.png') %>',
-    cancelOn  : '<%= asset_path('cancel-on.png') %>',
-    targetType: 'number',
+    cancelOff  : "<%= asset_path('cancel-off.png') %>",
+    cancelOn  : "<%= asset_path('cancel-on.png') %>",
+    targetType: "number",
     targetKeep: true,
     click: function(score, evt) {
       $("#review_rate").val(score);
     }
   });
-}
 
-$(document).on("ready page:load", ready);
+  $(".rate_show").raty({
+    size     : 24,
+    starOff  : "<%= asset_path('star-off.png') %>",
+    starOn   : "<%= asset_path('star-on.png') %>",
+    targetType: "number",
+    readOnly  : true,
+    targetKeep: true,
+    score: function() {
+      return $(this).attr("data-score");
+    }
+  });
+}
+$(document).on("ready page:load page:change", ready);
