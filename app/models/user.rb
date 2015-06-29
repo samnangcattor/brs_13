@@ -31,4 +31,16 @@ class User < ActiveRecord::Base
   def following? other_user
     following.include? other_user
   end
+
+  def reading book
+    book_states.create! book_id: book.id, state: Settings.reading
+  end
+
+  def reading? book
+    book_states.exists? book_id: book.id, state: Settings.reading
+  end
+
+  def read? book
+    book_states.exists? book_id: book.id, state: Settings.read
+  end
 end
