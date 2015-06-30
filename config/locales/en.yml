@@ -48,6 +48,7 @@ en:
     comment: "Comment"
     request: "Request"
   links:
+    comment: "Comment"
     profile: "Profile"
     setting: "Setting"
     signup: "Sign Up"
@@ -81,6 +82,7 @@ en:
     request: "Request have been created"
     delete_request: "Request book have been delete"
     failed_update: "Update is failed"
+    comment_delete: "Comment have been delete"
   titles:
     user: "Users"
     followers: "Followers"
@@ -113,3 +115,6 @@ en:
     by: "by:"
     title: "Title:"
     description: "Description:"
+  emails:
+    comment: "New comment on your review"
+    review: "New review"
