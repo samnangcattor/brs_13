@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root "static_pages#home"
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do
+    resources :request_books
+  end
   get "users/:id/:status", to: "relationships#index", as: :users_with_status
   resources :books, only: [:index, :show]
   resources :authors, only: [:show]
@@ -24,7 +26,6 @@ Rails.application.routes.draw do
   resources :reviews, except: [:index]
   resources :comments, except: [:index, :show]
   resources :book_states, only: [:create, :update]
-  resources :book_favorites, only: [:create, :destroy]
-  resources :book_states, only: [:create, :update]
   resources :book_favorites, only: [:index, :create, :destroy]
+  resources :request_books, except: [:show, :edit]
 end

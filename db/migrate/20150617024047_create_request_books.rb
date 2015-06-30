@@ -3,7 +3,7 @@ class CreateRequestBooks < ActiveRecord::Migration
     create_table :request_books do |t|
       t.references :user, index: true
       t.string :name
-      t.string :decription
+      t.string :description
 
       t.timestamps null: false
     end

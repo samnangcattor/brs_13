@@ -1,0 +1,11 @@
+<li>
+  <%= t "descriptions.title" %>
+  <%= request_book.name %></br>
+  <%= t "descriptions.description" %>
+  <%= request_book.description %></br>
+  <%= link_to t("links.edit"), edit_user_request_book_path(id: request_book.id),
+    "data-toggle" => "modal", remote: true, "data-target" => "#form-modal" %>
+  <div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+  <%= link_to t("links.delete"), request_book, method: :delete,
+    data: {confirm: t("flashs.confirm")} %>
+</li>
