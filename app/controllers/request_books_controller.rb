@@ -43,7 +43,7 @@ class RequestBooksController < ApplicationController
   def request_params
     params.require(:request_book).permit :name, :description
   end
-
+  
   def request_book_params
     @request_book = RequestBook.find params[:id]
   end
