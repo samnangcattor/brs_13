@@ -11,6 +11,7 @@ gem "bootstrap_form"
 gem "rails_config"
 gem "ransack"
 gem "sidekiq"
+gem "whenever", require: false
 # Use SCSS for stylesheets
 gem "sass-rails", "~> 5.0"
 # Use Uglifier as compressor for JavaScript assets
