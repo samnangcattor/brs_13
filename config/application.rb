@@ -32,5 +32,15 @@ module BaseApp
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.action_view.embed_authenticity_token_in_remote_forms = true
+    config.generators do |g|
+      g.test_framework :rspec,
+        fixtures: true,
+        view_spec: true,
+        helper_spec: false,
+        routing_spec: false,
+        controller_spec: true,
+        request_spec: true
+      g.fixture_replacement :factory_girl, dir: "spec/factories"
+    end
   end
 end
