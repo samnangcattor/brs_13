@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @search = Category.search params[:q]
     @categories = @search.result

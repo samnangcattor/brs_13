@@ -1,0 +1,6 @@
+<% provide :title, t("titles.timeline") %>
+<h1><%= t "title.timeline" %></h1>
+<ul class = "activities">
+  <%= render @activities %>
+</ul>
+<%= will_paginate @activities %>

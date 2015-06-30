@@ -1,0 +1,15 @@
+<li>
+  <%= link_to @user.name ,@user %>
+  <%= activity.state_target %>
+  <% if @user.follow_activity? activity %>
+    <%= link_to @user.find_followed(activity.target_id).name, @user.find_followed(activity.target_id) %>
+  <% elsif @user.read_activity? activity %>
+    <%= link_to @user.find_read(activity.target_id).title, @user.find_read(activity.target_id) %>
+  <% elsif @user.favorite_activity? activity %>
+    <%= link_to @user.find_favorite(activity.target_id).title,
+      @user.find_favorite(activity.target_id) %>
+  <% end %>
+  <%= t "descriptions.create" %>
+  <%= activity.created_at %>
+  <%= render "activities/activity_form", activity: activity %>
+</li>

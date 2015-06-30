@@ -56,4 +56,43 @@ class User < ActiveRecord::Base
   def favourite? book
     book_favorites.exists? book_id: book.id, favorite: true
   end
+
+  def follow_activity? activity
+    active_relationships.exists?(id: activity.target_id) && activity.state_target == Settings.follow
+  end
+
+  def read_activity? activity
+    book_states.exists?(id: activity.target_id) && activity.state_target == Settings.read
+  end
+
+  def favorite_activity? activity
+    book_favorites.exists?(id: activity.target_id) && activity.state_target == Settings.favorite
+  end
+
+  def find_followed activity
+    relationship = Relationship.find activity
+    user = relationship.followed
+  end
+
+  def find_read activity
+    book_read = BookState.find activity
+    book = book_read.book
+  end
+
+  def find_favorite activity
+    favorite_book = BookFavorite.find activity
+    book = favorite_book.book
+  end
+
+  def like other_activity
+    likes.create! activity_id: other_activity.id, like: true
+  end
+
+  def unlike other_activity
+    likes.find_by(activity_id: other_activity.id).destroy
+  end
+
+  def liking? other_activity
+    likes.exists? activity_id: other_activity.id
+  end
 end

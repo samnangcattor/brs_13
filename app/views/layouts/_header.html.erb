@@ -38,7 +38,7 @@
             </ul>
           </li>
         <% elsif user_signed_in? %>
-          <li><%= link_to t("menus.home"), root_path %></li>
+          <li><%= link_to t("menus.home"), user_activities_path(user_id: current_user.id) %></li>
           <li><%= link_to t("menus.show_list_user"), users_path %></li>
           <li><%= link_to t("menus.category"), categories_path %></li>
           <li id="fat-menu" class="dropdown">
