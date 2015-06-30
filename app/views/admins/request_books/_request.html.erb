@@ -1,0 +1,5 @@
+<% if request_book.state? %>
+  <%= t "link.accepted" %>
+<% else %>
+  <%= link_to t("link.accept"), admins_request_book_path(request_book), method: :patch, remote: true %>
+<% end %>

@@ -59,6 +59,8 @@ en:
     view_profile: "View my profile"
     request_book: "Request book"
     list_request: "List Request Book"
+    accepted: "Accepted"
+    accept: "Accept"
   flashs:
     login: "Please log in."
     confirm: "Are you sure ?"
@@ -121,3 +123,10 @@ en:
   emails:
     comment: "New comment on your review"
     review: "New review"
+  emails:
+    acceptbook: "Your book have been accepted."
+    hello: "Hello , "
+    bookname: "Book name : "
+    bookdescription: "Book description : "
+    requestdate: "Reuest date : "
+    acceptbook: "Your book have been accept."

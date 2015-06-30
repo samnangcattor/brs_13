@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :authors
     resources :categories
     resources :reviews, only: [:show]
-    resources :request_books, only: [:index, :destroy]
+    resources :request_books, only: [:index, :update, :destroy]
   end
   resources :relationships, only: [:index, :create, :destroy]
   resources :reviews, except: [:index]
