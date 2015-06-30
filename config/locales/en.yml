@@ -100,10 +100,12 @@ en:
     editbook: "Edit Book"
     authorname: "Author Names"
     categoryname: "Category Names"
+    booksearch: "Book titles"
     addauthor: "Add Author"
     editauthor: "Edit Author"
     review: "Reviews"
     request_book: "Request book"
+    search: "Search"
   descriptions:
     public: "public at:"
     category: "category:"

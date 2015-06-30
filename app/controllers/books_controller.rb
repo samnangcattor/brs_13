@@ -2,7 +2,8 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @books =  Book.paginate page: params[:page]
+    @search = Book.search params[:q]
+    @books = @search.result
   end
 
   def show

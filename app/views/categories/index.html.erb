@@ -1,0 +1,6 @@
+<% provide :title, t("titles.book") %>
+<h1><%= t "title.category" %></h1>
+  <ul class = "books">
+    <%= render partial: "show", collection: @categories, as: :category %>
+  </ul>
+<%= render "shared/category_search_box" %>
