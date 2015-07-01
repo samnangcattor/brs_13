@@ -100,7 +100,7 @@ describe User do
     end
   end
 
-  describe "#Read method" do
+  describe "#Read and Favorite method" do
     let(:book) {FactoryGirl.create :book}
 
     before {@book = FactoryGirl.create :book}
@@ -134,6 +134,135 @@ describe User do
       context "method is work" do
         before {subject.reading @book}
         it {expect(subject.read? @book)}
+      end
+    end
+
+    describe ".favourite" do
+      context "method is presentation" do
+        it {expect(subject).to respond_to(:favourite)}
+      end
+
+      context "method is work" do
+        before {subject.favourite @book}
+        it {expect(subject.favourite @book)}
+      end
+    end
+
+    describe ".unfavourite" do
+      context "method is presentation" do
+        it {expect(subject).to respond_to(:unfavourite)}
+      end
+
+      context "method is work" do
+        before {@book_state = subject.favourite @book}
+        it {expect(subject.unfavourite @book_state)}
+      end
+    end
+
+    describe ".favourite?" do
+      context "method is presentation" do
+        it {expect(subject).to respond_to(:favourite?)}
+      end
+
+      context "method is work" do
+        before {subject.favourite @book}
+        it {expect(subject.favourite? @book)}
+      end
+    end
+  end
+
+  describe "#Activity method" do
+    let(:activity) {FactoryGirl.create :user_activity}
+
+    before {@activity = FactoryGirl.create :activity}
+
+    describe ".follow_activity?" do
+      before {@another_user = FactoryGirl.create :user}
+      before {@relationship = subject.follow @another_user}
+      before {@activity.target_id = @relationship.id}
+      before {@activity.state_target = "follow"}
+      before {@activity.save}
+      context "method is work" do 
+        it {expect(subject.follow_activity? @activity)}
+      end
+    end
+
+    describe ".read_activity?" do
+      let(:book_state) {FactoryGirl.create :mark_book_state}
+
+      before {@book_state = FactoryGirl.create :book_state}
+      before {@book_state.state = "read"}
+      before {@activity.target_id = @book_state.id}
+      before {@activity.state_target = @book_state.state}
+      context "method is work" do
+        it {expect(subject.read_activity? @activity)}
+      end
+    end
+
+    describe ".favorite_activity?" do
+      let(:book_favorite) {FactoryGirl.create :mark_book_favorite}
+
+      before {@book_favorite = FactoryGirl.create :book_favorite}
+      before {@activity.target_id = @book_favorite.id}
+      before {@activity.state_target = "favorite"}
+      context "method is work" do
+        it {expect(subject.favorite_activity? @activity)}
+      end
+    end
+
+    describe ".find_followed" do
+      before {@another_user = FactoryGirl.create :user}
+      before {@relationship = subject.follow @another_user}
+      before {@activity.target_id = @relationship.id}
+      context "method is work" do
+        it {expect(subject.find_followed @activity.target_id).to eq @another_user}
+      end
+    end
+
+    describe ".find_read" do
+      let(:book_state) {FactoryGirl.create :mark_book_state}
+
+      before {@book = FactoryGirl.create :book}
+      before {@book_state = FactoryGirl.create :book_state}
+      before {@book_state.book_id = @book.id}
+      before {@book_state.save}
+      before {@book_state.state = "read"}
+      before {@activity.target_id = @book_state.id}
+      context "method is work" do
+        it {expect(subject.find_read @activity.target_id).to eq @book}
+      end
+    end
+
+    describe ".find_favorite" do
+      let(:book_favorite) {FactoryGirl.create :mark_book_favorite}
+
+      before {@book = FactoryGirl.create :book}
+      before {@book_favorite = FactoryGirl.create :book_favorite}
+      before {@book_favorite.book_id = @book.id}
+      before {@book_favorite.save}
+      before {@activity.target_id = @book_favorite.id}
+      context "method is work" do
+        it {expect(subject.find_favorite @activity.target_id).to eq @book}
+      end
+    end
+
+    describe ".like" do
+      context "method is work" do
+        it {expect(subject.like @activity)}
+      end
+    end
+
+    describe ".unlike" do
+      before {subject.like @activity}
+      context "method is work" do
+        it {expect(subject.unlike @activity)}
+      end
+    end
+
+    describe ".liking?" do
+      before {subject.like @activity}
+      context "method is work" do
+        it {expect(subject.liking? @activity)}
       end
     end
   end

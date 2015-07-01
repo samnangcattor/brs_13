@@ -5,6 +5,26 @@ FactoryGirl.define do
     role false
     password "123456"
     password_confirmation "123456"
+
+    factory :user_activity do
+      after :create do |user|
+        create :activity, user: user
+      end
+    end
+
+    factory :mark_book_favorite do
+      book = FactoryGirl.create :book
+      after :create do |user|
+        create :book_favorite, user: user, book: book
+      end
+    end
+
+    factory :mark_book_state do
+      book = FactoryGirl.create :book
+      after :create do |user|
+        create :book_state, book: book, user: user
+      end
+    end
   end
 
   factory :admin, class: User do
