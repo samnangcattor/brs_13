@@ -35,11 +35,11 @@ module BaseApp
     config.generators do |g|
       g.test_framework :rspec,
         fixtures: true,
-        view_spec: true,
-        helper_spec: false,
-        routing_spec: false,
-        controller_spec: true,
-        request_spec: true
+        view_specs: false,
+        helper_specs: false,
+        routing_specs: false,
+        controller_specs: true,
+        request_specs: true
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
   end
