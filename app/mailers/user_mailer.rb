@@ -12,6 +12,7 @@ class UserMailer < ApplicationMailer
     @email_review = comment.review.user.email
     @name_review = comment.review.user.name
     mail to: @email_review, suject: t("emails.review")
+  end
 
   def accepting_book user, request_book
     @user = user
