@@ -13,5 +13,4 @@ class Book < ActiveRecord::Base
   validates :title, presence: true, length: {maximum: 100}
   validates :publish_date, presence: true
   validates :page, presence: true, numericality: {only_integer: true, greater_than: 0}
-
 end

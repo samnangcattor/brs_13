@@ -25,6 +25,13 @@ FactoryGirl.define do
         create :book_state, book: book, user: user
       end
     end
+
+    factory :review_book do
+      book = FactoryGirl.create :book
+      after :create do |user|
+        create :review, book: book, user: user
+      end
+    end
   end
 
   factory :admin, class: User do
