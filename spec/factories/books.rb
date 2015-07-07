@@ -12,9 +12,5 @@ FactoryGirl.define do
         create :author_book, book: book, author: author
       end
     end
-
-    factory :category_of_book do
-      category = FactoryGirl.create :category
-    end
   end
 end

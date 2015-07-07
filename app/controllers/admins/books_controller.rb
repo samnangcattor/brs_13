@@ -6,6 +6,12 @@ before_action :set_book, except: [:index, :new, :create]
    @books =  Book.paginate page: params[:page] 
   end
 
+  def show
+    @categories = @book.categories
+    @authors = @book.authors
+    @reviews = @book.reviews.paginate page: params[:page]
+  end
+
   def new
     @book = Book.new
     @categories = Category.all
@@ -16,8 +22,8 @@ before_action :set_book, except: [:index, :new, :create]
     @book = Book.new book_params
     @books = Book.paginate page: params[:page]
     if @book.save
-      flash[:notice] = t "flashs.addbook"
-      render "index"
+      redirect_to admins_books_path
+      flash[:success] = t "flashs.addbook"
     else
       render "new"
     end
@@ -30,17 +36,11 @@ before_action :set_book, except: [:index, :new, :create]
 
   def update
     if @book.update_attributes book_params
-      flash[:notice] = t "titles.author"
-      redirect_to [:admins, @book]
+      redirect_to admins_books_path
+      flash[:success] = t "titles.author"
     else
       render "edit"
     end
-  end
-
-  def show
-    @categories = @book.categories
-    @authors = @book.authors
-    @reviews = @book.reviews.paginate page: params[:page]
   end
 
   def destroy
