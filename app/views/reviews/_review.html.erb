@@ -9,7 +9,7 @@
       <% if review.user == current_user %>
         <%= link_to t("link.edit"), edit_review_path(review), "data-toggle" => "modal", remote: true, "data-target" => "#form-modal" %>
         <%= link_to t("link.delete"), review, method: :delete,
-          data: { confirm: t("news.sure") } %>
+          data: {confirm: t("news.sure")} %>
       <% end %>
     </span></br>
       <p><%= link_to t("menus.comment"), review_path(review) %></p>

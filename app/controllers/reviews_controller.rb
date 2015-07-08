@@ -4,7 +4,6 @@ class ReviewsController < ApplicationController
 
   def show
     @comments = @review.comments.paginate page: params[:page]
-    @comment = @review.comments.build
   end
   
   def create

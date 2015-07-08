@@ -5,3 +5,4 @@ unfollow: unfollow
 favorite: favorite
 review: review
 comment: comment
+page_size: 15
