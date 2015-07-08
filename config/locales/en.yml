@@ -27,6 +27,7 @@ en:
     edit_rev: "Edit review"
     edit_comment: "Edit comment"
     list_favorite: "List Book Favorite"
+    add_new_book: "Add new books"
   news:
     cancelaccount: "Cancel Account"
     myaccount: "Cancel my acoount"
