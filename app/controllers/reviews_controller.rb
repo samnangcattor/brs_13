@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :destroy]
+  before_action :authenticate_user!
   before_action :set_review, except: [:new, :create]
 
   def show
@@ -23,17 +23,17 @@ class ReviewsController < ApplicationController
 
   def update
     if @review.update_attributes review_params
-      flash[:notice] = t "flashs.success"
+      flash[:success] = t "flashs.success"
       redirect_to @review.book
     else
-      flash[:alert] = t "flashs.notblank"
+      flash[:success] = t "flashs.notblank"
       render "edit"
     end
   end
 
   def destroy
     @review.destroy
-    flash[:notice] = t "flashs.rev_delete"
+    flash[:success] = t "flashs.rev_delete"
     redirect_to request.referer || root_url
   end
 
